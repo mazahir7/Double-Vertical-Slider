@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	/* changes the 1REM from 16px to 10px */
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	height: 100vh;
+}
+
+.slider-container {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.left-slide {
+	height: 100%;
+	width: 35%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 0.5s ease-in-out;
+}
+
+.left-slide > div {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	filter: brightness(120%);
+}
+
+.left-slide div {
+	text-align: center;
+}
+
+.left-slide div:last-child {
+	background: linear-gradient(#da291c, 30%, #fbe122, 65%, #da291c);
+}
+
+.left-slide div:first-child {
+	background: linear-gradient(#ef0107, #9c824a, #063672, #db0007);
+}
+
+.left-slide div:nth-child(4) {
+	background: linear-gradient(#febe10, #00529f, #ee324e);
+}
+
+.left-slide div:nth-child(3) {
+	background: linear-gradient(#edbb00, #004d98, #a50044, #db0030, #ffed02);
+}
+
+.left-slide div:nth-child(2) {
+	background: linear-gradient(#dc052d, 30%, #0066b2, 70%, #dc052d);
+}
+
+.left-slide h1 {
+	font-size: 3.2rem;
+	letter-spacing: 3px;
+	margin-bottom: 18rem;
+}
+
+.left-slide p {
+	font-size: 2.6rem;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.right-slide {
+	height: 100%;
+	width: 65%;
+
+	position: absolute;
+	top: 0;
+	/* left: 35%; */
+	right: 0;
+
+	transition: transform 0.5s ease-in-out;
+}
+
+.right-slide > div {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	filter: brightness(120%);
+}
+
+.slider-container .action-buttons button {
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	z-index: 999;
+}
+
+button {
+	background-color: #fff;
+	border: none;
+	color: #aaa;
+	cursor: pointer;
+	font-size: 1.6rem;
+	padding: 1.5rem;
+	transition: all 0.3s ease;
+}
+
+button:hover {
+	color: #222;
+}
+
+button:focus,
+button:focus-visible {
+	outline: none;
+}
+
+.slider-container .action-buttons .up-button {
+	transform: translateY(-100%);
+	border-radius: 0 5px 5px 0;
+}
+
+.slider-container .action-buttons .down-button {
+	transform: translateX(-100%);
+	border-radius: 5px 0 0 5px;
+}
+
+/* 592px */
+@media (max-width: 37em) {
+	.left-slide div h1,
+	.left-slide div p {
+		transform: rotate(270deg);
+		transform-origin: center;
+	}
+}
